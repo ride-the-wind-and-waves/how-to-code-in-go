@@ -1,4 +1,4 @@
-#[理解 Go 中的布尔逻辑](https://www.digitalocean.com/community/tutorials/understanding-boolean-logic-in-go)
+# [理解 Go 中的布尔逻辑](https://www.digitalocean.com/community/tutorials/understanding-boolean-logic-in-go)
 
 由 **Gopher Guides** 编写
 
