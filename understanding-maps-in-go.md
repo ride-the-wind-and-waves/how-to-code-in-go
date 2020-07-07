@@ -1,4 +1,4 @@
-## [理解 Go 中的 Map 类型](https://www.digitalocean.com/community/tutorials/understanding-maps-in-go)
+## [理解 Go 中的映射（Map）](https://www.digitalocean.com/community/tutorials/understanding-maps-in-go)
 
 由 **Gopher Guides** 编写
 
