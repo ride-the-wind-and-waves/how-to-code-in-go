@@ -1,11 +1,46 @@
 # How to code in Go 中文版
 
-- [前言](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/perface.md)
-- [简介](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/introduction.md)
-- [如何在 Ubuntu 搭建本地开发环境](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/ubuntu.md)
-- [如何在 MacOS 搭建本地开发环境](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/macos.md)
-- [如何在 Windows10 搭建本地开发环境](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/windows.md)
+- 前言
+- 简介
+- 如何在 Ubuntu 搭建本地开发环境
+- 如何在 MacOS 搭建本地开发环境
+- 如何在 Windows10 搭建本地开发环境
 - [如何在Go中编写第一个程序](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/how-to-write-your-first-program.md)
+- 理解 GOPATH
+- 如何在 Go 中编写注释
+- [理解 Go 中的变量类型](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/understanding-data-types-in-go.md)
+- Go 语言中的字符串
+- 如何在 Go 中格式化字符串
+- Go 中的字符串包
+- 如何在 Go 中使用变量和常量
+- 如何在 Go 中转化数据类型
+- 如何在 Go 中进行数学运算
 - [理解 Go 中的布尔逻辑](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/understanding-boolean-logic-in-go.md)
 - [理解 Go 中的字典类型](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/understanding-maps-in-go.md)
 
+- 理解 Go 中的字典类型
+- 理解 Go 中的数组和切片
+- 处理 Go 中的错误
+- 在 Go 中创建自定义错误
+- 在 Go 中处理 Panic
+- 在 Go 中导入包
+- 如何在 Go 中编写包
+- 理解 Go 中包的可见性
+- 如何在 Go 中编写条件语句
+- 如何在 Go 中编写分支语句
+- 如何在 Go 中构造 For 循环
+- 在 Go 循环中使用 break 和 continue 语句
+- 如何在 Go 中定义和调用函数
+- 如何在 Go 中使用可变函数
+- 理解 Go 中的 defer
+- 理解 Go 中的 init
+- 通过构建标签自定义 Go 二进制文件
+- 理解 Go 中的指针
+- 在 Go 中定义结构体
+- 在 Go 中定义方法
+- 如何构建和安装 Go 程序
+- 如何在 Go 中使用结构体标签
+- 如何在 Go 中使用接口
+- 为不同操作系统和架构构建 Go 应用
+- 使用 Idflags 为 Go 应用设置版本信息
+- 如何在 Go 中使用 Flag 包
