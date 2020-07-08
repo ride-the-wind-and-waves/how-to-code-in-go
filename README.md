@@ -16,6 +16,8 @@
 - 如何在 Go 中转化数据类型
 - 如何在 Go 中进行数学运算
 - [理解 Go 中的布尔逻辑](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/understanding-boolean-logic-in-go.md)
+- [理解 Go 中的字典类型](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/understanding-maps-in-go.md)
+
 - 理解 Go 中的字典类型
 - 理解 Go 中的数组和切片
 - 处理 Go 中的错误
