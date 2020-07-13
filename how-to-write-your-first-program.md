@@ -165,7 +165,8 @@ func main() {
 ```bash
     >"Please enter your name."
     >Sammy
-    >"Hi, Sammy! I'm Go!"
+    >"Hi, Sammy
+    >! I'm Go!"
 ```
 
 >“Hi, Sammy! I'm Go!” Sammy后面有一个换行符。
