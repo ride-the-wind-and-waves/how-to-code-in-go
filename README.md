@@ -6,8 +6,8 @@
 - 如何在 MacOS 搭建本地开发环境
 - 如何在 Windows10 搭建本地开发环境
 - [如何在Go中编写第一个程序](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/how-to-write-your-first-program.md)
-- 理解 GOPATH
-- 如何在 Go 中编写注释
+- [理解 GOPATH](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/understanding-the-gopath.md)
+- [如何在 Go 中编写注释](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/how-to-write-comments-in-go.md)
 - [理解 Go 中的变量类型](https://github.com/ride-the-wind-and-waves/how-to-code-in-go/blob/master/understanding-data-types-in-go.md)
 - Go 语言中的字符串
 - 如何在 Go 中格式化字符串
