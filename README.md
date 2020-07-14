@@ -6,18 +6,18 @@
 - 4.如何在 Ubuntu 搭建本地开发环境
 - 5.如何在 MacOS 搭建本地开发环境
 - 6.如何在 Windows10 搭建本地开发环境
-- 7.[如何在Go中编写第一个程序](./how-to-write-your-first-program.md)
-- 8.[理解 GOPATH](./8.understanding-the-gopath.md)
-- 9.如何在 Go 中编写注释
-- 10.[理解 Go 中的变量类型](./understanding-data-types-in-go.md)
+- 7.[如何在Go中编写第一个程序](7.how-to-write-your-first-program.md)
+- 8.[理解 GOPATH](8.understanding-the-gopath.md)
+- 9.[如何在 Go 中编写注释](9.how-to-write-comments-in-go.md)
+- 10.[理解 Go 中的变量类型](10.understanding-data-types-in-go.md)
 - 11.Go 语言中的字符串
 - 12.如何在 Go 中格式化字符串
 - 13.Go 中的字符串包
 - 14.如何在 Go 中使用变量和常量
 - 15.如何在 Go 中转化数据类型
 - 16.如何在 Go 中进行数学运算
-- 17.[理解 Go 中的布尔逻辑](./understanding-boolean-logic-in-go.md)
-- 18.理解 Go 中的字典类型
+- 17.[理解 Go 中的布尔逻辑](17.understanding-boolean-logic-in-go.md)
+- 18.[理解 Go 中的字典类型](18.understanding-maps-in-go.md)
 - 19.理解 Go 中的数组和切片
 - 20.[处理 Go 中的错误](20.handling-errors-in-go.md)
 - 21.在 Go 中创建自定义错误
