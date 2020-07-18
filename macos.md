@@ -61,3 +61,239 @@ macOS Terminal
 
 > 让我们看一下与curl命令关联的参数：
 
+* -f 或者 --fail 参数是告诉终端窗口，当服务器发生错误时，不输出服务器的错误信息
+* -s 或者 --silent 参数是让curl命令静默安装，不显示进度条，并与-S 或 --show-error 参数结合使用，确保curl在失败时，显示错误信息
+* -l 或者 --location 参数是让curl命令重新发送请求到新到位置。如果服务器响应，该请求已经移动到其他知道的时候，可以使用该参数
+
+> 一旦安装过程已经完成，我们需要把Homebrew的安装路径，配置到PATH环境变量的最开头处。这样可以确保macOS通过调用Homebrew安装自动选择的工具，这些工具可能会与我们正在创建的开发环境相冲突。
+
+> 你可以使用nano命令，创建或者打开~/.bash_profile配置文件
+```bash
+    > nano ~/.bash_profile
+```
+> 在“终端”窗口中打开文件后，编写以下内容：
+```bash
+    > export PATH=/usr/local/bin:$PATH
+```
+> 要保存更改的时候，需要按住CTRL键和字母o，出现提示时，按回车键。 然后，您可以通过按住CTRL键和字母x退出nano。
+
+> 通过在终端中执行以下操作来激活这些更改：
+```bash
+    > source〜/ .bash_profile
+```
+
+> 完成此操作后，对PATH环境变量所做的更改将生效
+
+> 您可以通过输入以下命令来确保成功安装了Homebrew：
+```bash
+    > brew doctor
+```
+
+> 如果此时不需要更新，则终端输出将显示为：
+```bash
+    > Your system is ready to brew
+```
+
+> 否则，您可能会收到警告，请运行其他命令（例如brew更新），以确保您安装的Homebrew是最新的。
+
+> 准备好Homebrew之后，即可安装Go。
+
+### 步骤4 -  安装GO
+
+> 您可以使用brewbr命令搜索Homebrew来搜索所有可用的软件包。就本教程而言，您将搜索与Go相关的软件包或模块：
+```bash
+    > brew search golang
+```
+
+> 注意：本教程不使用brew search go，因为它会返回太多结果。因为go是一个很小的词，他可以匹配许多软件包，所以使用golang作为搜索词会更准确。在互联网上搜索与Go相关的文章时，通常也是这么用。Golang一词来自Go的域名golang.org
+
+> 终端将输出您可以安装的列表：
+```bash
+    > golang golang-migrate
+```
+> Go将出现在列表中。 继续安装：
+```bash
+    > brew install golang
+```
+
+> 终端窗口将为您提供有关安装Go的过程。 安装完成可能需要几分钟
+
+> 要检查已安装的Go版本，请键入以下内容：
+```bash
+    > go version
+```
+
+> 这将输出当前安装的Go版本，默认情况下，它将是最新的，稳定的Go版本。
+
+> 将来，如果要更新Go，可以运行以下命令来首先更新Homebrew，然后再更新Go。 因为您刚刚安装了最新版本，因此现在不必这样做：
+```bash
+    > brew update 
+    > brew upgrade golang
+```
+
+> brew update将更新Homebrew本身，以确保您具有要安装的软件包的最新信息。 brew upgrade golang会将golang软件包更新为最新版本。
+
+> 好的更新方式可以确保您的Go版本是最新的。
+
+> 在计算机上安装Go之后，您就可以为Go项目创建工作区了。
+
+### 步骤5 -  创建go工作区
+
+> 现在，您已经安装了Xcode，Homebrew和Go，可以继续创建您的编程工作区。
+
+> Go工作区的根目录将包含两个目录：
+
+* src：包含Go源文件的目录。 源文件是您使用Go编程语言编写的文件。 Go编译器使用源文件来创建可执行的二进制文件。
+* bin：该目录包含由Go工具构建和编译的可执行文件。 可执行文件是在系统上运行并执行任务的二进制文件。 这些通常是由您的源代码或其他下载的Go源代码编译的程序。
+
+> src子目录可能包含多个版本控制存储库（例如Git，Mercurial和Bazaar）。当程序导入第三方库时，您将看到类似github.com或golang.org的目录。如果您使用的是github.com之类的代码存储库，则还将项目和源文件放在该目录下。这允许在项目中规范地导入代码。 规范导入是指引用标准软件包的导入，例如github.com/digitalocean/godo。
+
+> 这是典型的工作空间可能看起来像：
+```bash
+├── bin 
+│ ├── buffalo # command executable 
+│ ├── dlv # command executable 
+│ └── packr # command executable 
+└── src 
+    └── github.com 
+    └── digitalocean 
+    └── godo 
+        ├── .git # Git reposistory metadata 
+        ├── account.go # package source
+        ├── account_test.go # test source
+        ├── ... 
+        ├── timestamp.go 
+        ├── timestamp_test.go 
+        └── util 
+            ├── droplet.go 
+            └── droplet_test.go
+```
+
+> 从1.8版本开始，Go工作区的默认目录是用户的主目录，其中带有go子目录，即$HOME/go。
+
+> 如果您使用的Go版本早于1.8，则最好的做法是仍将$HOME/go位置用于工作空间。
+
+> 输入以下命令，为您在工作区中创建目录结构
+```bash
+    > mkdir -p $HOME/go/{bin,src}
+```
+
+> -p参数告诉mkdir命令在目录中创建所有父项（即使它们当前不存在）。使用{bin，src}为mkdir命令创建一组参数，告诉它创建bin目录和src目录。
+
+> 这将确保以下目录结构到位：
+```bash
+└── $HOME 
+└── go
+    ├── bin 
+    └── src
+```
+
+> 在Go 1.8之前，需要设置一个名为$ GOPATH的本地环境变量。尽管文档不再明确要求这样做，但由于许多第三方工具仍依赖于此变量的设置，因此仍被视为一种好的做法。
+
+> 您可以通过将$ GOPATH添加到〜/ .bash_profile中来设置它。
+
+> 首先，使用nano或您喜欢的文本打开〜/ .bash_profile
+```bash
+    > nano ~/.bash_profile
+```
+> 通过将以下内容添加到文件来设置$ GOPATH：
+```bash
+export GOPATH=$HOME/go
+```
+
+> 当Go编译并安装工具时，它将放置在$ GOPATH / bin目录中。为了方便起见，通常将工作区的/ bin子目录添加到您的PATH中 〜/ .bash_profile：
+```bash
+export PATH=$PATH:$GOPATH/bin
+```
+
+> 您现在应该在您的〜/ .bash_profile 文件中看到以下条目：
+```bash
+export GOPATH=$HOME/go 
+export PATH=$PATH:$GOPATH/bin
+```
+
+> 现在，你可以通过在系统上任何地方，运行所有编译或下载的Go程序
+
+> 要更新您的shell，请发出以下命令以全局加载您刚刚创建的变量：
+```bash
+    > ~/.bash_profile
+```
+> 您可以通过使用echo命令并检查输出来验证$ PATH是否已更新：
+```bash
+    > echo $PATH
+```
+
+> 您应该会看到$ GOPATH / bin出现在您的HOME目录。如果以sammy身份登录，则路径中将显示/Users/sammy/go/bin。
+```bash
+<^>/Users/sammy/go/bin<^>:/usr/local/sbin:/usr/local/bin:/usr/bin:/b
+```
+
+> 现在，您已经创建了工作区的根目录，并且设置$ GOPATH环境变量。将来会使用以下目录结构创建项目。这个例子假设你是使用github.com作为您的存储库：
+```bash
+$GOPATH/src/github.com/username/project
+```
+> 如果您正在使用https://github.com/digitalocean/godo
+项目，请将其放在以下目录中：
+```bash
+$GOPATH/src/github.com/digitalocean/godo
+```
+
+> 以这种方式构建项目将使go get工具可以使用项目。 这也将有助于以后的可读性。
+> 您可以使用go get命令来获取godo库，以进行验证：
+```bash
+    > go get github.com/digitalocean/godo
+```
+
+> 通过输入以下内容，我们可以看到它已成功下载godo软件包目录：
+```bash
+    > ls -l $GOPATH/src/github.com/digitalocean/godo
+```
+
+> 您将收到类似于以下的输出：
+```bash
+-rw-r--r-- 1 sammy staff 2892 Apr 5 15:56 CHANGELOG.md 
+-rw-r--r-- 1 sammy staff 1851 Apr 5 15:56 CONTRIBUTING.md
+...
+-rw-r--r-- 1 sammy staff 4893 Apr 5 15:56 vpcs.go 
+-rw-r--r-- 1 sammy staff 4091 Apr 5 15:56 vpcs_test.go
+```
+> 在此步骤中，您创建了Go工作区并配置了必要的环境变量。 在下一步中，您将使用一些代码来测试工作区。
+
+### 步骤6 -  创建一个简单程序
+
+> 现在，您已经设置好Go工作区，现在该创建一个简单的“ Hello，World！”程序了。这将确保您的工作区正常工作，并可以让你对Go更加熟悉。
+
+> 因为您正在创建单个Go源文件，而不是实际的项目，则无需在工作区中执行此操作。
+
+> 在主目录中，打开一个命令行文本编辑器，例如nano，并创建一个新文件：
+```bash
+    > nano hello.go
+```
+> 在终端中打开文本文件后，输入程序代码：
+```go
+package main 
+
+import "fmt" 
+
+func main() { 
+    fmt.Println("Hello, World!") 
+}
+```
+> 通过输入控件和x键退出nano，然后在提示您保存文件时按y。
+
+> 此代码将使用fmt包并调用Println函数，Hello, World! 作为参数。 这将把Hello，World在程序运行时打印到终端。
+
+> 退出nano编辑器并返回shell，请运行程序：
+
+```bash
+    > go run hello.go
+```
+
+> 您刚刚创建的hello.go程序将输出：
+```bash
+Hello, World!
+```
+
+> 在此步骤中，您使用了基本程序来验证Go工作区是否已正确配置。
+
+> 恭喜你！当前，您已经在本地macOS机器上设置了Go编程工作区，可以开始编码项目！
