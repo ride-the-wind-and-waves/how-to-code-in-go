@@ -4,7 +4,7 @@
 - 2.前言
 - 3.简介
 - 4.如何在 Ubuntu 搭建本地开发环境
-- 5.如何在 MacOS 搭建本地开发环境
+- 5.[如何在 MacOS 搭建本地开发环境](5.macos.md)
 - 6.如何在 Windows10 搭建本地开发环境
 - 7.[如何在Go中编写第一个程序](7.how-to-write-your-first-program.md)
 - 8.[理解 GOPATH](8.understanding-the-gopath.md)
