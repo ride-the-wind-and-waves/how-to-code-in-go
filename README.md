@@ -20,7 +20,7 @@
 - 18.[理解 Go 中的字典类型](18.understanding-maps-in-go.md)
 - 19.理解 Go 中的数组和切片
 - 20.[处理 Go 中的错误](20.handling-errors-in-go.md)
-- 21.在 Go 中创建自定义错误
+- 21.[在 Go 中创建自定义错误](21.creating-custom-errors-in-go.md)
 - 22.在 Go 中处理 Panic
 - 23.在 Go 中导入包
 - 24.如何在 Go 中编写包
